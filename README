@@ -1,0 +1,56 @@
+Moisa Anca-Elena
+321 CA
+
+Tema 1 PP - Arbori Binari
+
+insert
+
+inserarea unui noi in arbore are 3 cazuri: 
+-daca nu exista niciun nod in arbore, in acest caz creez un nou nod (frunza)
+-daca daca valoarea inserata e mai mica decat nodul curent, atunci aplic aceeasi 
+inserare recursiv, dar pe arborele stang
+-daca valoarea inserata e mai mare decat nodul curent, se insereaza in subarborele 
+drept, recursiv
+in ultimele 2 cazuri am aplicat si echilibrarea
+
+balance
+
+daca inaltimea din stanga e mai mare decat cea din dreapta + 1, atunci arborele se 
+roteste catre dreapta, altfel catre stanga
+
+union
+
+am verificat daca o valoare din arborele A se gaseste in arborele B
+daca da, atunci facun apel recursiv si trec mai departe, altfel inserez in arborele 
+B, valoarea curenta
+
+intersection
+
+am creat o functie auxiliara pentru posibilitatea crearii unui nou arbore auxiliar 
+in care voi adauga elementele comune ale celor 2 arbori
+daca nodul din A se gaseste in B, atunci il inserez in arborele auxiliar, sterg 
+nodul curent si trec la urmatoarea valoare
+daca nu se gaseste, atunci sterg nodul curent si trec mai departe
+
+complements
+
+asemanator cu intersection
+
+remove
+
+am procedat in mod asemanator cu insert-ul
+exista de asemenea 3 cazuri:
+-daca nodul este radacina: pentru asta, am creat o noua functie, in care daca valoarea 
+este stearsa, atunci ea va fi inlocuita de cea mai mica valoare din subarborele 
+drept; aceasta valoare se va gasi de doua ori in arbore, deci o sterg
+-daca valoarea este mai mica decat valoarea curenta (adica se afla in subarborele stang), 
+reapelez recursiv remove pe stanga
+-daca valoarea este mai mare decat valoarea curenta (adica se alfa in subarborele drept), 
+reapelez recursiv remove pe dreapta
+
+Una dintre cele mai dragute teme pe care le-am avut pana acum :)
+Aceasta nu s-a putut infaptui insa in totalitate de mine, deparece mereu exista acel
+ceva care ma pune in dificultate
+Persoane care m-au scos din impas: Dobroteanu Andreea, Vatamanu Alexandra
+Link-uri aferente: https://cs.nyu.edu/~eugenew/ta/dstruct08f/rec7/SuccPred.pdf 
+(am preluat acel pseudocod si l-am transpus in Racket)
